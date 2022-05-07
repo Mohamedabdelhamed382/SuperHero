@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var superheros: [Superhero] = superherosData
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach(superheros) { item in
+                   SuperheroView(superH: item)
+                }
+            }//:HStack
+            .padding(20)
+        }
     }
 }
 
